@@ -1,4 +1,5 @@
 import { Hono } from 'hono'
+import { cors } from 'hono/cors'
 
 // Define word categories
 interface WordCategory {
@@ -34,6 +35,7 @@ const categories: WordCategory[] = [
 ]
 
 const app = new Hono()
+app.use('*', cors())
 
 // Get all categories
 app.get('/categories', (c) => {
