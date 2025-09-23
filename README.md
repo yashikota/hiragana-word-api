@@ -27,5 +27,5 @@ https://hiragana-word-api.yashikota.workers.dev/?count=3
 ["ゆき", "ねこ", "あか"]
 ```
 
-単語リスト一覧は [words.json](./src/words.json) にあります。  
+単語一覧は [words.json](./src/words.json) にあります。  
 The list of words can be found in [words.json](./src/words.json).  
