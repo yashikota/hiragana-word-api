@@ -1,6 +1,6 @@
 # hiragana-word-api
 
-ひらがなをランダムに返すシンプルなAPIです。  
+ひらがなの単語をランダムに返すシンプルなAPIです。  
 A simple API that provides random Japanese hiragana words.  
 
 ## Overview
