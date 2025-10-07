@@ -27,5 +27,30 @@ https://hiragana-word-api.yashikota.workers.dev/?count=3
 ["ゆき", "ねこ", "あか"]
 ```
 
+クエリパラメータで `category=fruits` などのようにカテゴリーを指定すると、そのカテゴリーの単語だけが返されます。  
+If you specify a category with a query parameter like `category=fruits`, you will receive words only from that category.  
+
+```txt
+https://hiragana-word-api.yashikota.workers.dev/?category=fruits
+```
+
+```json
+["りんご"]
+```
+
+カテゴリーと個数を組み合わせることもできます。  
+You can combine both category and count parameters.  
+
+```txt
+https://hiragana-word-api.yashikota.workers.dev/?category=fruits&count=3
+```
+
+```json
+["もも", "ぶどう", "ばなな"]
+```
+
+利用可能なカテゴリー: `fruits`, `flowers`, `fish`, `animals`, `vegetables`, `colors`, `school_items`, `transportation`, `clothes`, `sports`, `instruments`, `nature`  
+Available categories: `fruits`, `flowers`, `fish`, `animals`, `vegetables`, `colors`, `school_items`, `transportation`, `clothes`, `sports`, `instruments`, `nature`  
+
 単語一覧は [words.json](./src/words.json) にあります。  
 The list of words can be found in [words.json](./src/words.json).  

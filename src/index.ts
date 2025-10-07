@@ -15,9 +15,18 @@ app.use("*", cors());
 app.get("/", (c) => {
   const countParam = c.req.query("count");
   const count = countParam ? parseInt(countParam, 10) : 1;
+  const categoryParam = c.req.query("category");
 
-  const allWords = categories.flatMap((category) => category.words);
-  const shuffled = [...allWords].sort(() => 0.5 - Math.random());
+  let wordsToSelect: string[];
+
+  if (categoryParam) {
+    const category = categories.find((cat) => cat.name === categoryParam);
+    wordsToSelect = category ? category.words : [];
+  } else {
+    wordsToSelect = categories.flatMap((category) => category.words);
+  }
+
+  const shuffled = [...wordsToSelect].sort(() => 0.5 - Math.random());
   const selectedWords = shuffled.slice(0, count);
   return c.json(selectedWords);
 });
